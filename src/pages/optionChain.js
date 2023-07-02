@@ -123,6 +123,7 @@ function OptionChain() {
 const tableMode = (tableMode) => {
     settableModeState(tableMode);
   };
+  
 
   const getselectedValues = (date, time, expiry, tableState) => {
     setisLoading(true);
@@ -247,6 +248,17 @@ const tableMode = (tableMode) => {
     },
     // ... additional data
   ];
+  fetch('http://localhost:3001') 
+  .then(response => response.json())
+  .then(data => {
+    sampleData = data;
+    
+    console.log(data);
+  })
+  .catch(error => {
+    // Handle any errors that occur during the fetch
+    console.error('Error fetching sample data:', error);
+  });
   
     return (
 
