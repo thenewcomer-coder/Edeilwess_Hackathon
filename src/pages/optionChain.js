@@ -202,8 +202,52 @@ const tableMode = (tableMode) => {
       }
     }
   };
-
-
+  const sampleData = [
+    {
+      CE: {
+        openInterest: 100,
+        changeinOpenInterest: 10,
+        totalTradedVolume: 200,
+        impliedVolatility: 0.5,
+        lastPrice: 150,
+        change: 5,
+        pChange: 2,
+      },
+      PE: {
+        openInterest: 150,
+        changeinOpenInterest: 20,
+        totalTradedVolume: 300,
+        impliedVolatility: 0.6,
+        lastPrice: 200,
+        change: -7,
+        pChange: -3,
+      },
+      strikePrice: 1000,
+    },
+    {
+      CE: {
+        openInterest: 50,
+        changeinOpenInterest: -5,
+        totalTradedVolume: 150,
+        impliedVolatility: 0.4,
+        lastPrice: 120,
+        change: 8,
+        pChange: 4,
+      },
+      PE: {
+        openInterest: 200,
+        changeinOpenInterest: 15,
+        totalTradedVolume: 250,
+        impliedVolatility: 0.7,
+        lastPrice: 180,
+        change: -5,
+        pChange: -2,
+      },
+      strikePrice: 1100,
+    },
+    // ... additional data
+  ];
+  
     return (
 
         
@@ -211,7 +255,7 @@ const tableMode = (tableMode) => {
          {/* <OptionContext.Provider value={experies}> */}
         <HeaderComponent  selectedValues={getselectedValues} nifty={niftyValue} lastSync={lastSyncTime} tableMode={tableMode}  ></HeaderComponent> 
        {/* {isLoading ?  */}
-    { !isLoading ? <TableComponent  values={tableValues}></TableComponent> : <Loader></Loader>}
+    { !isLoading ? <TableComponent  /*values={tableValues}*/values={sampleData}> </TableComponent> : <Loader></Loader>}
        {/* : <Loader></Loader>} */}
        {/* </OptionContext.Provider>    */}
         </div>
